@@ -1,24 +1,23 @@
-# devfolio
+# Template for Vuejs with i18n support
 
-## Project setup
+### Set the locale message you want:
+At the `/locales/en.ts`: 
+```typescript
+export default {
+  en: {
+      message: "My message works!"
+  },
+};
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+At the `/locales/pt-br.ts`: 
+```typescript
+export default {
+  'pt-br': {
+      message: "Minha mensagem funciona!"
+  },
+};
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+To use the message you can simply do:
+```typescript
+{{ $t('message') }}
